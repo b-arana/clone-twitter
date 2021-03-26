@@ -1,65 +1,81 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { useEffect, useState } from "react";
+import styles from "styles/Home.module.css";
+import Layout from "components/layout/index";
+import Button from "components/button/index";
+import GitHub from "components/icons/index";
+import Avatar from "components/avatar/index";
+
+import { colors } from "styles/theme";
+
+import { loginWithGitHub, onAuthStateChanged } from "firebase/client";
 
 export default function Home() {
+  const [user, setUser] = useState(undefined);
+
+  useEffect(() => {
+    onAuthStateChanged(setUser);
+  }, []);
+
+  const handleClick = () => {
+    loginWithGitHub()
+      .then(setUser)
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Layout className={styles.main}>
+        <section>
+          <img src="/vercel.svg" alt="Logo" />
+          <h1>Title</h1>
+          <h2>Talk about front-end</h2>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+          <div>
+            {user === null && (
+              <Button onClick={handleClick}>
+                <GitHub fill="#fff" width={24} height={24} />
+                Login with GitHub
+              </Button>
+            )}
+            {user && user.avatar && (
+              <div>
+                <Avatar
+                  alt={user.username}
+                  src={user.avatar}
+                  text={user.username}
+                />
+              </div>
+            )}
+          </div>
+        </section>
+      </Layout>
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <style jsx>{`
+        img {
+          width: 120px;
+        }
+        div {
+          margin-top: 16px;
+        }
+        section {
+          display: grid;
+          height: 100%;
+          place-content: center;
+          place-items: center;
+        }
+        h1 {
+          color: ${colors.secondary};
+          font-weight: 800;
+          margin-bottom: 16px;
+        }
+        h2 {
+          color: ${colors.primary};
+          font-size: 21px;
+          margin: 0;
+        }
+      `}</style>
+    </>
   );
 }
