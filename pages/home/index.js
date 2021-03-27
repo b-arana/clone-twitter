@@ -33,7 +33,9 @@ export default function HomePage() {
       <style jsx>{`
         header {
           align-items: center;
-          border-bottom: 1px solid #ccc;
+          background: #ffffffaa;
+          backdrop-filter: blur(5px);
+          border-bottom: 1px solid #eee;
           height: 49px;
           display: flex;
           position: sticky;
@@ -43,13 +45,13 @@ export default function HomePage() {
         h2 {
           font-size: 21px;
           font-weight: 800;
+          padding-left: 15px;
         }
-        section {
-          padding-top: 49px;
-        }
+
         nav {
+          background: #fff;
           bottom: 0;
-          border-top: 1px solid #ccc;
+          border-top: 1px solid #eee;
           height: 49px;
           position: sticky;
           width: 100%;
