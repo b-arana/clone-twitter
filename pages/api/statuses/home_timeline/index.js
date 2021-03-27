@@ -28,6 +28,66 @@ const timeline = [
   
   Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
   },
+  {
+    id: "3",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
+  {
+    id: "4",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
+  {
+    id: "5",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
+  {
+    id: "6",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
+  {
+    id: "7",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
+  {
+    id: "8",
+    username: "barana",
+    name: "Borja",
+    avatar:
+      "https://gravatar.com/avatar/28bdf42b0b0fe811c584e9ccc1f9d4b0?s=400&d=robohash&r=x.jpg",
+    message: `Abro paraguas Paraguas
+  
+  Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`,
+  },
 ];
 
 export default (req, res) => {
